@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import axios from 'axios'
 
 export const mensagemService = {
   mensagensAll,
@@ -6,20 +6,14 @@ export const mensagemService = {
   sendMensagem
 }
 
-function mensagensAll () {
-  const requestConfig = {
-    method: 'GET'
-  }
-
-  return Vue.axios.get('/api/mensagens', requestConfig)
-}
+const url = 'https://nameless-fjord-67867.herokuapp.com/api'
 
 function findMensagens () {
   const requestConfig = {
     method: 'GET'
   }
 
-  return Vue.axios.get('/api/mensagens', requestConfig)
+  return axios.get(`${url}/mensagens`, requestConfig)
 }
 
 function sendMensagem (form) {
@@ -27,5 +21,5 @@ function sendMensagem (form) {
     method: 'GET'
   }
 
-  return Vue.axios.post('/api/mensagens', form, requestConfig)
+  return axios.post(`${url}/mensagens`, form, requestConfig)
 }
