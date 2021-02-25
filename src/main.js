@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -17,7 +19,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 Vue.use(VueAxios, axios)
-axios.defaults.baseURL = 'https://doug-weiss-backend.vercel.app/'
+axios.defaults.baseURL = process.env.URL_LOCALHOST_BACKEND
 // axios.defaults.headers.common.Accept = 'application/json'
 
 Vue.config.productionTip = false
