@@ -17,7 +17,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 Vue.use(VueAxios, axios)
-axios.defaults.baseURL = 'http://localhost:3000/'
+axios.defaults.baseURL = 'https://doug-weiss-backend.vercel.app/'
 // axios.defaults.headers.common.Accept = 'application/json'
 
 Vue.config.productionTip = false
