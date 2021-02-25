@@ -1,7 +1,7 @@
 module.exports = {
   // options...
   devServer: {
-        proxy: 'https://doug-weiss-backend.vercel.app/',
+        proxy: 'https://nameless-fjord-67867.herokuapp.com/',
         https: true,
     }
 }
