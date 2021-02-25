@@ -8,7 +8,7 @@ export const cadastroService = {
 
 function login (form) {
   const requestConfig = {
-    method: 'GET'
+    method: 'POST'
   }
 
   return Vue.axios.post('/api/login', form, requestConfig)
