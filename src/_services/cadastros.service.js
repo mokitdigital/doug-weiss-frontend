@@ -1,4 +1,7 @@
 import Vue from 'vue'
+import axios from 'axios'
+import dotenv from 'dotenv'
+dotenv.config({ silent: process.env.NODE_ENV === 'production' })
 
 export const cadastroService = {
   cadastrosAll,
@@ -11,7 +14,7 @@ function login (form) {
     method: 'POST'
   }
 
-  return Vue.axios.post('/api/login', form, requestConfig)
+  return axios.post('https://nameless-fjord-67867.herokuapp.com/api/login', form, requestConfig)
 }
 
 function cadastrosAll () {
