@@ -29,6 +29,7 @@ export default {
 
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;900&display=swap');
+
 * {
   overflow: hidden;
 }
@@ -53,7 +54,6 @@ h1 {
     text-transform: uppercase;
     font-weight: 900;
   }
-
   .btn {
     text-decoration: none;
     position: relative;
@@ -62,7 +62,6 @@ h1 {
     height: 60px;
     padding: 10px;
   }
-
   .btn:before {
     content: "";
     position: absolute;
@@ -78,7 +77,6 @@ h1 {
     );
     transition: all 650ms;
   }
-
   .btn:hover:before {
     left: 100%;
   }
