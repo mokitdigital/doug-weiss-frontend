@@ -11,7 +11,8 @@
         :src="video"
         controls="true"
         class="embed-responsive-item animate__animated animate__backInRight animate__slow px-2 rounded"
-    >
+      >
+      Seu navegador não suporta o elemento <code>video</code>.
     </video>
     </div>
   </div>
