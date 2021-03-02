@@ -2,7 +2,8 @@ import axios from 'axios'
 
 export const mensagemService = {
   findMensagensEmpresa,
-  sendMensagem
+  sendMensagemEmpresa,
+  deleteMensagemEmpresa
 }
 
 const url = 'https://nameless-fjord-67867.herokuapp.com/api'
@@ -12,13 +13,21 @@ function findMensagensEmpresa (nome) {
     method: 'GET'
   }
 
-  return axios.get(`${url}/mensagens/empresa/${nome}`, requestConfig)
+  return axios.get(`${url}/mensagens/empresas/${nome}`, requestConfig)
 }
 
-function sendMensagem (form) {
+function sendMensagemEmpresa (nome, form) {
   const requestConfig = {
     method: 'GET'
   }
 
-  return axios.post(`${url}/mensagens`, form, requestConfig)
+  return axios.post(`${url}/mensagens/envios/${nome}`, form, requestConfig)
+}
+
+function deleteMensagemEmpresa(nome) {
+  const requestConfig = {
+    method: 'GET'
+  }
+
+  return axios.post(`${url}/mensagens/empresas/${nome}`, requestConfig
 }

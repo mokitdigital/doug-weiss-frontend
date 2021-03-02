@@ -6,7 +6,7 @@
           <router-link to="/parodias" class="btn" v-scroll-to="'#parodias'">Paródias</router-link>
           <router-link to="/fotos" class="btn" v-scroll-to="'#fotos'">Fotos</router-link>
           <router-link to="/parcerias" class="btn" v-scroll-to="'#parcerias'">Parcerias</router-link>
-          <router-link to="/contato/login" class="btn" v-scroll-to="'#login'">Contato</router-link>
+          <router-link to="/contato/formulario" class="btn" v-scroll-to="'#formulario'">Contato</router-link>
         </b-nav>
       </div>
     </b-row>

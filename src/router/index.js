@@ -4,10 +4,11 @@ import Model from '../views/Model.vue'
 import Parodias from '../components/Parodias/Index.vue'
 import Fotos from '../components/Fotos/Index.vue'
 import Contato from '../components/Contato/Index.vue'
-import Formulario from '../components/Contato/Formulario.vue'
-import Chat from '../components/Contato/Chat.vue'
+import ClientForm from '../components/Contato/ClientForm.vue'
+/* import Formulario from '../components/Contato/Formulario.vue'
+import Chat from '../components/Contato/NewChat.vue'
 import ChatAdm from '../components/Contato/ChatAdm.vue'
-import Login from '../components/Contato/Login.vue'
+import Login from '../components/Contato/Login.vue' */
 import Parcerias from '../components/Parcerias/Index.vue'
 
 Vue.use(VueRouter)
@@ -39,6 +40,11 @@ const routes = [
     component: Parcerias
   },
   {
+    path: '/contato/formulario',
+    name: 'Formulario',
+    component: ClientForm
+  }
+/*   {
     path: '/contato/register',
     name: 'Register',
     component: Formulario
@@ -58,6 +64,7 @@ const routes = [
     name: 'Administrador',
     component: ChatAdm
   }
+  */
 ]
 
 const router = new VueRouter({
