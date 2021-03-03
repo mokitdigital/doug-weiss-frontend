@@ -9,6 +9,8 @@ import ClientForm from '../components/Contato/ClientForm.vue'
 import Chat from '../components/Contato/NewChat.vue'
 import ChatAdm from '../components/Contato/ChatAdm.vue'
 import Login from '../components/Contato/Login.vue' */
+import Login from '../components/Contato/Login.vue'
+import Clientes from '../components/Contato/TabelaClientes.vue'
 import Parcerias from '../components/Parcerias/Index.vue'
 
 Vue.use(VueRouter)
@@ -43,8 +45,8 @@ const routes = [
     path: '/contato/formulario',
     name: 'Formulario',
     component: ClientForm
-  }
-/*   {
+  },
+  /*   {
     path: '/contato/register',
     name: 'Register',
     component: Formulario
@@ -54,17 +56,17 @@ const routes = [
     name: 'Login',
     component: Login
   },
+  */
   {
-    path: '/contato/chat',
-    name: 'Chat',
-    component: Chat
+    path: '/contato/login',
+    name: 'Login',
+    component: Login
   },
   {
-    path: '/contato/administrador',
-    name: 'Administrador',
-    component: ChatAdm
+    path: '/contato/clientes',
+    name: 'Clientes',
+    component: Clientes
   }
-  */
 ]
 
 const router = new VueRouter({

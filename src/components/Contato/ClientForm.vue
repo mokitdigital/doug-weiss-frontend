@@ -153,6 +153,7 @@
             </b-form-group>
 
             <b-button type="submit" variant="primary">Enviar</b-button>
+            <b-spinner label="Spinning" class="mx-4 mt-2 text-" v-if="loading">Enviando mensagem</b-spinner>
           </b-form>
           <div
             v-else
@@ -171,6 +172,11 @@
             </b-card>
           </div>
         </div>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col class="my-4">
+        <b-button variant="danger" @click="login()">Login</b-button>
       </b-col>
     </b-row>
   </b-container>
@@ -231,10 +237,12 @@ export default {
         celular: '',
         empresa: '',
         motivo: '',
-        descricao: ''
+        descricao: '',
+        dataHora: ''
       },
       motivos: [{ text: 'Selecione o Motivo', value: null }, 'Stories', 'Posts', 'Paródias', 'Outro'],
       show: true,
+      loading: false,
       images: [
         graphics1,
         graphics2,
@@ -253,19 +261,25 @@ export default {
   methods: {
     onSubmit (event) {
       event.preventDefault()
+      this.form.dataHora = dayjs().format('DD/MM/YYYY HH:mm')
+      this.loading = true
       formService
         .sendMessages(this.form)
-        .then(response => {
-          alert(JSON.stringify(response))
+        .then(() => {
+          this.loading = false
           this.show = false
         })
         .catch(error => {
+          this.loading = false
           this.$swal('Erro ao enviar mensagem')
           console.log(error)
         })
     },
     getDias () {
       alert(dayjs('2018 Enero 15', 'YYYY MMMM DD', 'pt-br'))
+    },
+    login () {
+      this.$router.push('/contato/login')
     }
   }
 }
