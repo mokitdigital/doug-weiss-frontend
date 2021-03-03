@@ -1,13 +1,54 @@
 <template>
   <b-container id="formulario">
+    <b-row class="my-4 text-center">
+      <b-col cols="6">
+        <h1>Alcance por Genero</h1>
+        <GChart
+          :settings="{ packages: ['corechart', 'table', 'map'] }"
+          type="PieChart"
+          :data="genero"
+          class="animate__animated animate__backInLeft animate__slow gchart"
+        />
+      </b-col>
+      <b-col cols="6">
+        <h1>Alcance por Idade</h1>
+        <GChart
+          :settings="{ packages: ['corechart', 'table', 'map'] }"
+          type="ColumnChart"
+          :data="idade"
+          class="animate__animated animate__backInLeft animate__slow gchart"
+        />
+      </b-col>
+    </b-row>
+    <b-row class="my-4 text-center">
+      <b-col cols="6">
+        <h1>Media por Stories</h1>
+        <GChart
+          :settings="{ packages: ['corechart', 'table', 'map'] }"
+          type="LineChart"
+          :data="stories"
+          class="animate__animated animate__backInLeft animate__slow gchart"
+        />
+      </b-col>
+      <b-col cols="6">
+        <h1>Principais Localizações</h1>
+        <GChart
+          :settings="{ packages: ['corechart', 'table', 'map'] }"
+          type="BarChart"
+          :data="cidades"
+          class="animate__animated animate__backInLeft animate__slow gchart"
+        />
+      </b-col>
+    </b-row>
     <b-row>
       <b-col>
         <div>
           <b-form
             @submit="onSubmit"
             v-if="show"
-            class="my-4"
+            class="my-4 text-white"
           >
+            <h1 class="text-white text-center" style="font-size: 25px;">Entre em contato comigo!</h1>
             <b-form-group
               label="Coloque seu nome:"
               label-for="input-name"
@@ -129,10 +170,46 @@
 <script>
 import AwesomeMask from 'awesome-mask'
 import { formService } from '../../_services/formularios.service'
+import graphics1 from '../../assets/img/graphics1.jpg'
+import graphics2 from '../../assets/img/graphics2.jpg'
+import graphics3 from '../../assets/img/graphics3.jpg'
+import { GChart } from 'vue-google-charts'
+import dayjs from 'dayjs'
 
 export default {
   data () {
     return {
+      genero: [
+        ['Genero', '%'],
+        ['Mulheres', 75.5],
+        ['Homens', 24.4]
+      ],
+      stories: [
+        ['Últimos Stories', 'Visualizações'],
+        ['Seg', 2835],
+        ['Ter', 2863],
+        ['Qua', 2875],
+        ['Qui', 2937],
+        ['Sex', 3006],
+        ['Sáb', 3150]
+      ],
+      idade: [
+        ['Idade', '%'],
+        ['13-17', 5],
+        ['18-24', 26.4],
+        ['25-34', 38.3],
+        ['35-44', 21.5],
+        ['45-64', 8.2],
+        ['65+', 0.4]
+      ],
+      cidades: [
+        ['Cidades', '%'],
+        ['Gravataí', 41.8],
+        ['Cachoeirinha', 10],
+        ['Porto Alegre', 8.8],
+        ['Taquará', 1.8],
+        ['São Paulo', 1.8]
+      ],
       form: {
         nome: '',
         sobrenome: '',
@@ -143,8 +220,17 @@ export default {
         descricao: ''
       },
       motivos: [{ text: 'Selecione o Motivo', value: null }, 'Stories', 'Posts', 'Paródias', 'Outro'],
-      show: true
+      show: true,
+      images: [
+        graphics1,
+        graphics2,
+        graphics3
+      ],
+      index: null
     }
+  },
+  components: {
+    GChart
   },
   directives: {
     mask: AwesomeMask
@@ -162,20 +248,27 @@ export default {
           this.$swal('Erro ao enviar mensagem')
           console.log(error)
         })
+    },
+    getDias () {
+      alert(dayjs('2018 Enero 15', 'YYYY MMMM DD', 'pt-br'))
     }
   }
 }
 </script>
 
-<style>
-
+<style scoped>
 form {
   background-color: #383838;
   border-radius: 5px;
   padding: 50px;
 }
 
-label {
+h1 {
   color: #fff;
+  font-size: 15px;
+}
+
+.gchart {
+  border-radius: 5px;
 }
 </style>

@@ -8,7 +8,12 @@
           <router-link to="/contato/formulario" class="btn" v-scroll-to="'#formulario'">Contato</router-link>
         </div>
         <div class="text-animation">
-          <h2>Aqui coloca suas informacoes de visualizacoes, e outros dados importantes.</h2>
+          <h2>
+            <strong>Números por Publicações: </strong>
+            Alcance de <strong>5mil</strong>  |
+              + de <strong>1mil</strong> curtidas |
+              + de <strong>500</strong> comentários
+          </h2>
         </div>
     </div>
     <div id="title" class="animate__animated animate__zoomIn animate__slow">

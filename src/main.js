@@ -4,6 +4,7 @@ import router from './router'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import VueSweetalert2 from 'vue-sweetalert2'
 import VueScrollTo from 'vue-scrollto'
+import VueGoogleCharts from 'vue-google-charts'
 import './Vue.scss'
 import 'animate.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
@@ -22,6 +23,7 @@ Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
 Vue.use(VueScrollTo)
+Vue.use(VueGoogleCharts)
 
 const options = {
   confirmButtonColor: '#000',
