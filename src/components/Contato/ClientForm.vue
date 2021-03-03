@@ -49,6 +49,15 @@
             class="my-4 text-white"
           >
             <h1 class="text-white text-center" style="font-size: 25px;">Entre em contato comigo!</h1>
+            <div class="col-sm text-center central my-4">
+              <a href="https://www.facebook.com/dougweiss20" target="_blank" rel="noopener noreferrer">
+                <font-awesome-icon class="icons" :icon="facebook" size="2x" style="color: #fff; margin: 0 20px;" />
+              </a>
+              <a href="https://www.instagram.com/doug.weiss/" target="_blank" rel="noopener noreferrer">
+                <font-awesome-icon class="icons" :icon="instagram" size="2x" style="color: #fff; margin: 0 20px;" />
+              </a>
+              <h3 class="my-4">ou</h3>
+            </div>
             <b-form-group
               label="Coloque seu nome:"
               label-for="input-name"
@@ -175,10 +184,15 @@ import graphics2 from '../../assets/img/graphics2.jpg'
 import graphics3 from '../../assets/img/graphics3.jpg'
 import { GChart } from 'vue-google-charts'
 import dayjs from 'dayjs'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 export default {
   data () {
     return {
+      facebook: faFacebookF,
+      twitter: faTwitter,
+      instagram: faInstagram,
       genero: [
         ['Genero', '%'],
         ['Mulheres', 75.5],
@@ -230,7 +244,8 @@ export default {
     }
   },
   components: {
-    GChart
+    GChart,
+    FontAwesomeIcon
   },
   directives: {
     mask: AwesomeMask
