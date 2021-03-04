@@ -9,7 +9,7 @@
         </b-table>
       </b-col>
     </b-row>
-    <b-modal id="modal-1" :title="cliente.Nome_Completo + ' | ' + cliente.Empresa">
+    <b-modal hide-footer id="modal-1" hide-header v-if="show">
       <p class="my-4 p-4 border-bottom">
         <strong>Nome Completo:</strong> {{ cliente.Nome_Completo }}
       </p>
@@ -29,7 +29,14 @@
         <strong>Descricao do Motivo:</strong> {{ cliente.Descricao }}
       </p>
       <p class="my-4 p-4">
-        <strong>Data e Hora do Contato:</strong> {{ cliente.DataHora }}</p>
+        <strong>Data e Hora do Contato:</strong> {{ cliente.DataHora }}
+      </p>
+
+      <b-button
+        class="mt-3"
+        block
+        @click="closeModal()"
+      >Close Me</b-button>
     </b-modal>
   </b-container>
 </template>
@@ -40,10 +47,15 @@ export default {
   data () {
     return {
       dataTable: [],
-      cliente: {}
+      cliente: {},
+      show: false
     }
   },
   methods: {
+    closeModal () {
+      this.cliente = {}
+      this.show = false
+    },
     getClientesDataTable () {
       formService.findMensagens().then(response => {
         for (let index = 0; index < response.data.formularios.length; index++) {
@@ -76,6 +88,7 @@ export default {
             }
 
             this.cliente = newItem
+            this.show = true
           }
         }
       })
