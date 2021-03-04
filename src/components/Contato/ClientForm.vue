@@ -1,7 +1,7 @@
 <template>
   <b-container id="formulario">
     <b-row class="my-4 text-center">
-      <b-col cols="6">
+      <div class="col-sm">
         <h1>Alcance por Genero</h1>
         <GChart
           :settings="{ packages: ['corechart', 'table', 'map'] }"
@@ -9,8 +9,8 @@
           :data="genero"
           class="animate__animated animate__backInLeft animate__slow gchart"
         />
-      </b-col>
-      <b-col cols="6">
+      </div>
+      <div class="col-sm my-4">
         <h1>Alcance por Idade</h1>
         <GChart
           :settings="{ packages: ['corechart', 'table', 'map'] }"
@@ -18,10 +18,10 @@
           :data="idade"
           class="animate__animated animate__backInLeft animate__slow gchart"
         />
-      </b-col>
+      </div>
     </b-row>
     <b-row class="my-4 text-center">
-      <b-col cols="6">
+      <div class="col-sm">
         <h1>Media por Stories</h1>
         <GChart
           :settings="{ packages: ['corechart', 'table', 'map'] }"
@@ -29,8 +29,8 @@
           :data="stories"
           class="animate__animated animate__backInLeft animate__slow gchart"
         />
-      </b-col>
-      <b-col cols="6">
+      </div>
+      <div class="col-sm my-4">
         <h1>Principais Localizações</h1>
         <GChart
           :settings="{ packages: ['corechart', 'table', 'map'] }"
@@ -38,7 +38,7 @@
           :data="cidades"
           class="animate__animated animate__backInLeft animate__slow gchart"
         />
-      </b-col>
+      </div>
     </b-row>
     <b-row>
       <b-col>
