@@ -18,7 +18,11 @@ export default {
     Footer
   },
   mounted () {
-    if (this.$route.path !== '/parodias') this.$router.push('/parodias')
+    if (localStorage.getItem('dougweiss')) {
+      this.$router.push('/contato/clientes')
+    } else if (this.$route.path !== '/parodias') {
+      this.$router.push('/parodias')
+    }
   }
 }
 </script>

@@ -42,7 +42,7 @@ export default {
 
 @keyframes opaciting {
   0% {
-    margin-right: -2100px;
+    margin-right: -3000px;
     opacity: 1;
   }
   25% {
@@ -55,7 +55,7 @@ export default {
     opacity: 0.2s;
   }
   100% {
-    margin-left: -2500px;
+    margin-left: -3000px;
   }
 }
 

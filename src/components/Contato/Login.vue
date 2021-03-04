@@ -24,6 +24,7 @@
 
 <script>
 // import { cadastroService } from '../../_services/cadastros.service'
+import dayjs from 'dayjs'
 
 export default {
   data () {
@@ -37,6 +38,8 @@ export default {
   methods: {
     login () {
       if (this.form.nomeUsuario === 'dougweiss' && this.form.password === '1234') {
+        const KEY = dayjs().format('DDMMYYYYHHmm')
+        localStorage.setItem('dougweiss', KEY)
         this.$router.push('/contato/clientes')
       }
       /* cadastroService.login(this.form).then(response => {

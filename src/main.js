@@ -27,7 +27,7 @@ Vue.use(VueGoogleCharts)
 
 const options = {
   confirmButtonColor: '#000',
-  cancelButtonColor: '#fff'
+  cancelButtonColor: '#ff0000'
 }
 
 Vue.use(VueSweetalert2, options)
