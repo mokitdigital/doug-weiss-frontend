@@ -1,7 +1,7 @@
 <template>
   <b-container id="formulario">
     <b-row class="my-4 text-center">
-      <div class="col-sm">
+      <div class="col-sm my-4">
         <h1>Alcance por Genero</h1>
         <GChart
           :settings="{ packages: ['corechart', 'table', 'map'] }"
@@ -21,7 +21,7 @@
       </div>
     </b-row>
     <b-row class="my-4 text-center">
-      <div class="col-sm">
+      <div class="col-sm my-4">
         <h1>Media por Stories</h1>
         <GChart
           :settings="{ packages: ['corechart', 'table', 'map'] }"
