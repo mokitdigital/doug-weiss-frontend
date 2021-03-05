@@ -6,11 +6,9 @@
       class="videos"
     >
       <video
-        width="400"
-        height="315"
         :src="video"
         controls="true"
-        class="embed-responsive-item animate__animated animate__backInRight animate__slow px-2 rounded"
+        class="embed-responsive-item animate__animated animate__backInRight animate__slow px-2 rounded videoItem"
       >
       Seu navegador não suporta o elemento <code>video</code>.
     </video>
@@ -22,6 +20,9 @@
 import video1 from '../../assets/media/video1.mp4'
 import video2 from '../../assets/media/video2.mp4'
 import video3 from '../../assets/media/video3.mp4'
+import video4 from '../../assets/media/video4.mp4'
+import video5 from '../../assets/media/video5.mp4'
+import video6 from '../../assets/media/video6.mp4'
 
 export default {
   data () {
@@ -29,7 +30,10 @@ export default {
       videos: [
         video1,
         video2,
-        video3
+        video3,
+        video4,
+        video5,
+        video6
       ]
     }
   }
@@ -38,9 +42,9 @@ export default {
 
 <style scoped>
 #parodias {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  grid-template-rows: 50% 50%;
   margin: 20px auto;
 }
 .videos {
@@ -48,7 +52,13 @@ export default {
   flex-flow: row wrap;
   justify-content: space-around;
   padding: 0;
+  margin: 20px;
 }
+
+.videoItem {
+  border-radius: 10px;
+}
+
 @media screen and (max-width: 1095px) {
   #parodias {
     display: block;
