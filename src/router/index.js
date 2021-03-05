@@ -12,6 +12,7 @@ import Login from '../components/Contato/Login.vue' */
 import Login from '../components/Contato/Login.vue'
 import Clientes from '../components/Contato/TabelaClientes.vue'
 import Parcerias from '../components/Parcerias/Index.vue'
+import Entrevistas from '../components/Entrevistas/Index.vue'
 
 Vue.use(VueRouter)
 
@@ -40,6 +41,11 @@ const routes = [
     path: '/parcerias',
     name: 'Parcerias',
     component: Parcerias
+  },
+  {
+    path: '/entrevistas',
+    name: 'Entrevistas',
+    component: Entrevistas
   },
   {
     path: '/contato/formulario',

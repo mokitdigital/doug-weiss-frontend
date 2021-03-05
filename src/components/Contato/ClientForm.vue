@@ -1,42 +1,42 @@
 <template>
   <b-container id="formulario">
     <b-row class="my-4 text-center">
-      <div class="col-sm my-4">
+      <div class="col-sm my-4 animate__animated animate__backInLeft animate__slow">
         <h1>Alcance por Genero</h1>
         <GChart
           :settings="{ packages: ['corechart', 'table', 'map'] }"
           type="PieChart"
           :data="genero"
-          class="animate__animated animate__backInLeft animate__slow gchart"
+          class="gchart"
         />
       </div>
-      <div class="col-sm my-4">
+      <div class="col-sm my-4 animate__animated animate__backInRight animate__slow">
         <h1>Alcance por Idade</h1>
         <GChart
           :settings="{ packages: ['corechart', 'table', 'map'] }"
           type="ColumnChart"
           :data="idade"
-          class="animate__animated animate__backInLeft animate__slow gchart"
+          class="gchart"
         />
       </div>
     </b-row>
-    <b-row class="my-4 text-center">
+    <b-row class="my-4 text-center animate__animated animate__backInLeft animate__slow">
       <div class="col-sm my-4">
         <h1>Media por Stories</h1>
         <GChart
           :settings="{ packages: ['corechart', 'table', 'map'] }"
           type="LineChart"
           :data="stories"
-          class="animate__animated animate__backInLeft animate__slow gchart"
+          class="gchart"
         />
       </div>
-      <div class="col-sm my-4">
+      <div class="col-sm my-4 animate__animated animate__backInRight animate__slow">
         <h1>Principais Localizações</h1>
         <GChart
           :settings="{ packages: ['corechart', 'table', 'map'] }"
           type="BarChart"
           :data="cidades"
-          class="animate__animated animate__backInLeft animate__slow gchart"
+          class="gchart"
         />
       </div>
     </b-row>

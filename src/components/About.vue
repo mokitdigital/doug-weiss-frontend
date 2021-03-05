@@ -5,7 +5,7 @@
         <b-nav class="mt-5" align="center">
           <b-nav-item>
             <router-link to="/parodias" v-scroll-to="'#parodias'">
-              Parodias
+              Paródias
             </router-link>
           </b-nav-item>
           <b-nav-item>
@@ -16,6 +16,11 @@
           <b-nav-item>
             <router-link to="/parcerias" v-scroll-to="'#parcerias'">
               Parcerias
+            </router-link>
+          </b-nav-item>
+          <b-nav-item>
+            <router-link to="/entrevistas" v-scroll-to="'#entrevistas'">
+              Entrevistas
             </router-link>
           </b-nav-item>
           <b-nav-item>
@@ -51,6 +56,14 @@ export default {
   }
   a:hover {
     color: #bbb8b8;
+  }
+}
+
+@media screen and (max-width: 516px) {
+  #about {
+    a {
+      font-size: 17px;
+    }
   }
 }
 </style>
