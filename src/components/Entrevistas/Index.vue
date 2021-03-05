@@ -22,6 +22,7 @@ import casa from '../../assets/img/entrevistas/decasa.png'
 import diario from '../../assets/img/entrevistas/diariogaucho.jpg'
 import jc from '../../assets/img/entrevistas/jc.png'
 import rdctv from '../../assets/img/entrevistas/rdctv.png'
+import sindilojas from '../../assets/img/entrevistas/sindilojas.jpg'
 
 export default {
   data: function () {
@@ -45,6 +46,10 @@ export default {
       {
         src: rdctv,
         href: 'https://www.facebook.com/watch/live/?v=2846675545610217&ref=watch_permalink'
+      },
+      {
+        src: sindilojas,
+        href: 'https://sindilojasgravatai.com.br/douglas-weiss-o-jovem-gravataiense-que-movimenta-o-comercio-em-tempos-de-pandemia/'
       }]
     }
   }
@@ -73,8 +78,8 @@ export default {
 .image {
   border: 1px solid #ebebeb;
   padding: 5px;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   margin-top: 20px;
   line-height: 150px;
   color: white;
