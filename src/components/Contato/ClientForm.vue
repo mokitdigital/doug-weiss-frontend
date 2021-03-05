@@ -2,7 +2,7 @@
   <b-container id="formulario">
     <b-row class="my-4 text-center">
       <div class="col-sm my-4 animate__animated animate__backInLeft animate__slow">
-        <h1>Alcance por Genero</h1>
+        <h1>Alcance por Gênero</h1>
         <GChart
           :settings="{ packages: ['corechart', 'table', 'map'] }"
           type="PieChart"
@@ -22,7 +22,7 @@
     </b-row>
     <b-row class="my-4 text-center animate__animated animate__backInLeft animate__slow">
       <div class="col-sm my-4">
-        <h1>Media por Stories</h1>
+        <h1>Média por Stories</h1>
         <GChart
           :settings="{ packages: ['corechart', 'table', 'map'] }"
           type="LineChart"

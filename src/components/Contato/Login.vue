@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     login () {
-      if (this.form.nomeUsuario === 'dougweiss' && this.form.password === '1234') {
+      if (this.form.nomeUsuario === 'dougweiss' && this.form.password === '@senha6534') {
         const KEY = dayjs().format('DDMMYYYYHHmm')
         localStorage.setItem('dougweiss', KEY)
         this.$router.push('/contato/clientes')
