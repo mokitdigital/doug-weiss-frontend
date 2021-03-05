@@ -5,6 +5,7 @@
           <router-link to="/parodias" class="btn" v-scroll-to="'#parodias'">Paródias</router-link>
           <router-link to="/fotos" class="btn" v-scroll-to="'#fotos'">Fotos</router-link>
           <router-link to="/parcerias" class="btn" v-scroll-to="'#parcerias'">Parcerias</router-link>
+          <router-link to="/entrevistas" class="btn" v-scroll-to="'#entrevistas'">Entrevistas</router-link>
           <router-link to="/contato/formulario" class="btn" v-scroll-to="'#formulario'">Contato</router-link>
         </div>
         <div class="text-animation">
@@ -89,7 +90,7 @@ export default {
       display: flex;
     }
     a {
-      font-size: 0.65rem;
+      font-size: 0.5rem;
       margin: 1rem 0.2rem 0.5rem 0.2rem;
       color: #000;
       text-transform: uppercase;
