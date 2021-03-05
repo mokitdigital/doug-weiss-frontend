@@ -17,6 +17,50 @@
           </h2>
         </div>
     </div>
+    <div id="navbar-resp">
+      <h1 v-b-toggle.sidebar-2>&#9776;</h1>
+      <b-sidebar
+        bg-variant="dark"
+        text-variant="light"
+        id="sidebar-2"
+        title="Menu Principal"
+        shadow
+      >
+      <hr style="color: #fff;" />
+      <ul class="mx-4">
+        <li class="my-2" style="font-weight: 700; ">
+          <router-link
+            style="color: #fff;"
+            to="/parodias"
+            v-scroll-to="'#parodias'"
+            v-b-toggle.sidebar-2
+          >
+            Paródias
+          </router-link>
+        </li>
+        <li class="my-2" style="font-weight: 700; ">
+          <router-link style="color: #fff;" to="/fotos" v-scroll-to="'#fotos'" v-b-toggle.sidebar-2>
+            Fotos
+          </router-link>
+        </li>
+        <li class="my-2" style="font-weight: 700; ">
+          <router-link style="color: #fff;" to="/parcerias" v-scroll-to="'#parcerias'" v-b-toggle.sidebar-2>
+            Parcerias
+          </router-link>
+        </li>
+        <li class="my-2" style="font-weight: 700; " >
+          <router-link style="color: #fff;" to="/entrevistas" v-scroll-to="'#entrevistas'" v-b-toggle.sidebar-2>
+            Entrevistas
+          </router-link>
+        </li>
+        <li class="my-2" style="font-weight: 700; ">
+          <router-link style="color: #fff;" to="/contato" v-scroll-to="'#contato'" v-b-toggle.sidebar-2>
+            Contato
+          </router-link>
+        </li>
+      </ul>
+      </b-sidebar>
+    </div>
     <div id="title" class="animate__animated animate__zoomIn animate__slow">
       <h1>Doug Weiss</h1>
       <p>Divulgue sua empresa comigo!</p>
@@ -86,6 +130,8 @@ export default {
   align-items: center;
   background-color: #fff;
   #navbar {
+    display: block;
+
     .btn-group {
       display: flex;
     }
@@ -135,6 +181,9 @@ export default {
         animation: opaciting-responsive 15s infinite ease-in-out;
       }
     }
+  }
+  #navbar-resp {
+    display: none;
   }
   #title {
     display: flex;
@@ -204,6 +253,17 @@ export default {
       grid-area: 3 / 1 / 5 / 5;
     }
 
+  }
+}
+
+@media screen and (max-width: 440px) {
+  #header {
+    #navbar {
+      display: none;
+    }
+    #navbar-resp {
+      display: block;
+    }
   }
 }
 </style>
