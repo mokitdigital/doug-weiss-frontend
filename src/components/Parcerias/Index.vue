@@ -18,17 +18,31 @@
 
 <script>
 import VueGallery from 'vue-gallery'
+import Ana from '../../assets/img/parcerias/anaeana.jpg'
+import Daniele from '../../assets/img/parcerias/danielesalvador.jpg'
+import Kau from '../../assets/img/parcerias/kaucaffe.jpg'
+import Mundo from '../../assets/img/parcerias/mundoencantado.jpg'
+import Parc1 from '../../assets/img/parcerias/parc1.jpg'
+import SindiLojas from '../../assets/img/parcerias/sindilojas.jpg'
+import Vale from '../../assets/img/parcerias/superlojadovale.jpg'
+import Supreme from '../../assets/img/parcerias/supreme.jpg'
+import Vacariense from '../../assets/img/parcerias/vacariense.jpg'
+import Yazigi from '../../assets/img/parcerias/yazigi.png'
 
 export default {
   data: function () {
     return {
       images: [
-        'https://dummyimage.com/1960/ffffff/000000',
-        'https://dummyimage.com/1600/ffffff/000000',
-        'https://dummyimage.com/1280/000000/ffffff',
-        'https://dummyimage.com/400/000000/ffffff',
-        'https://dummyimage.com/400/000000/ffffff',
-        'https://dummyimage.com/200/000000/ffffff'
+        Ana,
+        Daniele,
+        Kau,
+        Mundo,
+        Parc1,
+        SindiLojas,
+        Vale,
+        Supreme,
+        Vacariense,
+        Yazigi
       ],
       index: null
     }
