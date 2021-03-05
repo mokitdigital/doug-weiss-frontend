@@ -20,6 +20,8 @@
 import jr from '../../assets/img/entrevistas/jr.jpg'
 import casa from '../../assets/img/entrevistas/decasa.png'
 import diario from '../../assets/img/entrevistas/diariogaucho.jpg'
+import jc from '../../assets/img/entrevistas/jc.png'
+import rdctv from '../../assets/img/entrevistas/rdctv.png'
 
 export default {
   data: function () {
@@ -35,6 +37,14 @@ export default {
       {
         src: diario,
         href: 'http://diariogaucho.clicrbs.com.br/rs/dia-a-dia/noticia/2020/07/jovem-de-gravatai-chama-a-atencao-nas-redes-sociais-com-parodias-para-divulgar-comercios-da-cidade-12530027.html'
+      },
+      {
+        src: jc,
+        href: 'https://www.jornaldocomercio.com/_conteudo/ge2/noticias/2021/03/780913-atraves-de-parodias-jovem-ajuda-a-divulgar-o-comercio-de-gravatai.html'
+      },
+      {
+        src: rdctv,
+        href: 'https://www.facebook.com/watch/live/?v=2846675545610217&ref=watch_permalink'
       }]
     }
   }
@@ -63,8 +73,8 @@ export default {
 .image {
   border: 1px solid #ebebeb;
   padding: 5px;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   margin-top: 20px;
   line-height: 150px;
   color: white;
