@@ -206,6 +206,7 @@
               v-model="form.password"
               placeholder="Senha"
               type="password"
+              @keyup.enter="login()"
             ></b-form-input>
 
             <b-button variant="primary" @click="login()">Entrar</b-button>
@@ -271,7 +272,7 @@ export default {
         email: '',
         celular: '',
         empresa: '',
-        motivo: '',
+        motivo: '' || null,
         descricao: '',
         dataHora: ''
       },
@@ -318,6 +319,8 @@ export default {
         const KEY = dayjs().format('DDMMYYYYHHmm')
         localStorage.setItem('dougweiss', KEY)
         this.$router.push('/contato/clientes')
+      } else {
+        this.$swal('Senha inválida!')
       }
     }
   }
