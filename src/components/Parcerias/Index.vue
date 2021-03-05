@@ -1,5 +1,5 @@
 <template>
-  <div id="parcerias" style="display: flex; justify-content: center; align-items: center;">
+  <div id="parcerias">
     <gallery :images="images" :index="index" @close="index = null"></gallery>
     <div
       class="box-image animate__animated animate__backInLeft animate__slow"
@@ -54,32 +54,35 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 *{
   overflow-x: hidden;
 }
-#fotos {
+
+#parcerias {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.box-image {
-  margin: 15px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  padding: 0;
-}
 
-.image {
-  border: 1px solid #ebebeb;
-  padding: 5px;
-  width: 400px;
-  margin-top: 20px;
-  line-height: 150px;
-  color: white;
-  font-weight: bold;
-  font-size: 3em;
-  text-align: center;
+  .box-image {
+    margin: 15px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+
+    .image {
+      border: 1px solid #ebebeb;
+      padding: 5px;
+      width: 300px;
+      height: 300px;
+      margin-top: 20px;
+      line-height: 150px;
+      color: white;
+      font-weight: bold;
+      font-size: 3em;
+      text-align: center;
+    }
+  }
 }
 </style>
