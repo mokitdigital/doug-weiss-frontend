@@ -175,8 +175,43 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col class="my-4">
-        <b-button variant="danger" @click="login()">Login</b-button>
+      <b-col class="my-4 text-center">
+        <hr />
+        <h1 class="text-white">Faça seu login</h1>
+        <b-button variant="danger" v-b-toggle.sidebar-1>Login</b-button>
+        <b-sidebar
+          bg-variant="dark"
+          text-variant="light"
+          id="sidebar-1"
+          title="Login"
+          shadow
+          no-header
+        >
+          <b-form style="background-color: transparent;" class="col-12 my-4">
+            <a
+              v-b-toggle.sidebar-1
+              class="closeSidebar"
+            >X</a>
+            <h1
+              class="my-4 fontlogin"
+            >Faça seu Login</h1>
+
+            <b-input-group prepend="@" class="my-4">
+              <b-form-input id="inline-form-input-username" placeholder="Empresa" v-model="form.nomeUsuario"></b-form-input>
+            </b-input-group>
+
+            <b-form-input
+              id="inline-form-input-name"
+              class="my-4"
+              v-model="form.password"
+              placeholder="Senha"
+              type="password"
+            ></b-form-input>
+
+            <b-button variant="primary" @click="login()">Entrar</b-button>
+            <!-- <b-button variant="dark" class="mx-5 my-4" @click="register()">Registrar-se</b-button> -->
+          </b-form>
+        </b-sidebar>
       </b-col>
     </b-row>
   </b-container>
@@ -279,7 +314,11 @@ export default {
       alert(dayjs('2018 Enero 15', 'YYYY MMMM DD', 'pt-br'))
     },
     login () {
-      this.$router.push('/contato/login')
+      if (this.form.nomeUsuario === 'dougweiss' && this.form.password === '@senha6534') {
+        const KEY = dayjs().format('DDMMYYYYHHmm')
+        localStorage.setItem('dougweiss', KEY)
+        this.$router.push('/contato/clientes')
+      }
     }
   }
 }
@@ -299,5 +338,20 @@ h1 {
 
 .gchart {
   border-radius: 5px;
+}
+
+.closeSidebar {
+  position: relative;
+  float: right;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.fontlogin {
+  font-size: 20px;
+  font-weight: 700;
 }
 </style>
