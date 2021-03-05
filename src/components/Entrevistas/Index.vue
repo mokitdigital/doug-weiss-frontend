@@ -63,7 +63,8 @@ export default {
 .image {
   border: 1px solid #ebebeb;
   padding: 5px;
-  width: 400px;
+  width: 300px;
+  height: 300px;
   margin-top: 20px;
   line-height: 150px;
   color: white;
