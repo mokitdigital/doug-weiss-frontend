@@ -24,6 +24,8 @@ import jc from '../../assets/img/entrevistas/jc.png'
 import rdctv from '../../assets/img/entrevistas/rdctv.png'
 import sindilojas from '../../assets/img/entrevistas/sindilojas.jpg'
 import prefeituraGravatai from '../../assets/img/entrevistas/prefeituragravatai.jpg'
+import giro from '../../assets/img/entrevistas/giro.jpg'
+import seguinte from '../../assets/img/entrevistas/seguinte.jpg'
 
 export default {
   data: function () {
@@ -55,6 +57,14 @@ export default {
       {
         src: prefeituraGravatai,
         href: 'https://gravatai.atende.net/#!/tipo/noticia/valor/12116'
+      },
+      {
+        src: giro,
+        href: 'https://www.girodegravatai.com.br/influenciador-gravataiense-douglas-weiss-lanca-hoje-parodia-sobre-a-valorizacao-do-comercio-local/?fbclid=IwAR1wVbWlDPcqFZEbpu1ObbzP8IPrn_quQ5UMhMXr_Q32pD90eJGEgvWSEWg'
+      },
+      {
+        src: seguinte,
+        href: 'http://seguinte.inf.br/mobile//noticias/cidade/7948_A-reinvencao-do-comercio-de-Gravatai;-o-exemplo-do-Doug'
       }]
     }
   }
