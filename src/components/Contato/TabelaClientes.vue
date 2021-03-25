@@ -61,7 +61,7 @@
           :current-page="currentPage"
         >
           <template #cell(Empresa)="data">
-            <a v-b-modal.modal-1 @click="getClienteUnique(data.value)">{{ data.value }}</a>
+            <a @click="getClienteUnique(data.value)">{{ data.value }}</a>
           </template>
         </b-table>
 
@@ -76,7 +76,7 @@
         <p class="mt-3 text-white">Pagina {{ currentPage }}</p>
       </b-col>
     </b-row>
-    <b-modal hide-footer id="modal-1" hide-header v-if="show">
+    <b-modal hide-footer id="form-client" hide-header>
       <p class="my-4 p-4 border-bottom">
         <strong>Nome Completo:</strong> {{ cliente.Nome_Completo }}
       </p>
@@ -192,8 +192,7 @@ export default {
       }
     },
     closeModal () {
-      this.cliente = {}
-      this.show = false
+      this.$bvModal.hide('form-client')
     },
     getClientesDataTable () {
       formService.findMensagens().then(response => {
@@ -228,7 +227,7 @@ export default {
 
             console.log(newItem.Celular)
             this.cliente = newItem
-            this.show = true
+            this.$bvModal.show('form-client')
           }
         }
       })
