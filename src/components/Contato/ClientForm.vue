@@ -198,7 +198,7 @@
     >Faça seu Login</h1>
 
     <b-input-group prepend="@" class="my-4">
-      <b-form-input id="inline-form-input-username" placeholder="Empresa" v-model="form.nomeUsuario"></b-form-input>
+      <b-form-input id="inline-form-input-username" placeholder="Empresa" v-model="form.username"></b-form-input>
     </b-input-group>
 
     <b-form-input
@@ -222,6 +222,7 @@
 <script>
 import AwesomeMask from 'awesome-mask'
 import { formService } from '../../services/formularios.service'
+import { authService } from '../../services/auth.service'
 import graphics1 from '../../assets/img/graphics1.jpg'
 import graphics2 from '../../assets/img/graphics2.jpg'
 import graphics3 from '../../assets/img/graphics3.jpg'
@@ -316,13 +317,20 @@ export default {
       alert(dayjs('2018 Enero 15', 'YYYY MMMM DD', 'pt-br'))
     },
     login () {
-      if (this.form.nomeUsuario === 'dougweiss' && this.form.password === '@senha6534') {
+      authService.login(this.form).then(response => {
+        const KEY = dayjs().format('DDMMYYYYHHmm')
+        localStorage.setItem('dougweiss', KEY)
+        this.$router.push('/contato/clientes')
+      }).catch(() => {
+        this.$swal('Senha inválida!')
+      })
+      /* if (this.form.username === 'dougweiss' && this.form.password === '@senha6534') {
         const KEY = dayjs().format('DDMMYYYYHHmm')
         localStorage.setItem('dougweiss', KEY)
         this.$router.push('/contato/clientes')
       } else {
         this.$swal('Senha inválida!')
-      }
+      } */
     }
   }
 }
