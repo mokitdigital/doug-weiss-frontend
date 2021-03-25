@@ -21,7 +21,7 @@
         <b-form-input
           type="text"
           class="my-4"
-          @keyup.enter="searchCliente()"
+          @keyup="searchCliente()"
           placeholder="Pesquisar Empresa"
           v-model="search"
           style="border-radius: 1rem;"
@@ -59,7 +59,14 @@
           :sort-desc.sync="sortDesc"
           :per-page="perPage"
           :current-page="currentPage"
+          :busy="show"
         >
+          <template v-slot:table-busy>
+            <div class="text-center text-info my-2">
+              <b-spinner class="align-middle"></b-spinner>
+              <strong>Carregando...</strong>
+            </div>
+          </template>
           <template #cell(Empresa)="data">
             <a @click="getClienteUnique(data.value)">{{ data.value }}</a>
           </template>
@@ -71,6 +78,7 @@
           :per-page="perPage"
           aria-controls="my-table"
           class="customPagination"
+          align="center"
         ></b-pagination>
 
         <p class="mt-3 text-white">Pagina {{ currentPage }}</p>
@@ -173,16 +181,20 @@ export default {
       this.show = false
     },
     searchCliente () {
-      this.newDataTable = []
-      this.newDataTable = this.dataTable
-      this.dataTable = []
+      if (this.search !== '') {
+        this.newDataTable = []
+        this.newDataTable = this.dataTable
+        this.dataTable = []
+        const length = this.newDataTable.length
 
-      for (let index = 0; index < this.newDataTable.length; index++) {
-        const element = this.newDataTable[index]
-
-        if (element.Empresa === this.search) {
-          this.dataTable.push(element)
+        for (let i = 0; i < length; i++) {
+          console.log('Dado: ' + this.newDataTable[i].Empresa)
+          if (this.newDataTable[i].Empresa.toLowerCase().indexOf(this.search.toLowerCase()) !== -1) {
+            this.dataTable.push(this.newDataTable[i])
+          }
         }
+      } else {
+        this.$router.go()
       }
     },
     clearSearchCliente () {
@@ -198,7 +210,6 @@ export default {
       formService.findMensagens().then(response => {
         for (let index = 0; index < response.data.formularios.length; index++) {
           const element = response.data.formularios[index]
-          console.log(element)
           const newItem = {
             Empresa: `${element.empresa}`,
             Motivo: `${element.motivo}`,
@@ -224,8 +235,6 @@ export default {
               Descricao: `${element.descricao}`,
               DataHora: `${element.dataHora}`
             }
-
-            console.log(newItem.Celular)
             this.cliente = newItem
             this.$bvModal.show('form-client')
           }
