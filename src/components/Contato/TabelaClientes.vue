@@ -4,7 +4,7 @@
       <div class="col-sm-4">
         <b-form-input
           type="text"
-          class="my-4"
+          class="my-4 rounded"
           @keyup.enter="searchCliente()"
           placeholder="Pesquisar Empresa"
           v-model="search"
@@ -15,14 +15,14 @@
         <b-button
           variant="dark"
           @click="searchCliente()"
-          class="my-4"
+          class="my-4 rounded"
         >
           Procurar
         </b-button>
         <b-button
           variant="danger"
           @click="clearSearchCliente()"
-          class="my-4 mx-2"
+          class="my-4 mx-2 rounded"
         >
           Limpar
         </b-button>
