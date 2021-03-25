@@ -74,7 +74,7 @@
 import { data as dataTextoEnviado } from '../../data/dataTextoEnviado'
 import { data as dataTextoRecebido } from '../../data/dataTextoRecebido'
 import { empresas as dataEmpresas } from '../../data/dataEmpresas'
-import { mensagemService } from '../../_services/mensagens.service'
+import { mensagemService } from '../../services/mensagens.service'
 import dayjs from 'dayjs'
 
 export default {

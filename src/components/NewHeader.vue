@@ -18,7 +18,9 @@
         </div>
     </div>
     <div id="navbar-resp">
-      <h1 v-b-toggle.sidebar-2>&#9776;</h1>
+      <div class="ml-4 mt-4 d-flex justify-content-sm-end">
+        <h1 v-b-toggle.sidebar-2>&#9776;</h1>
+      </div>
       <b-sidebar
         bg-variant="dark"
         text-variant="light"
@@ -26,39 +28,42 @@
         title="Menu Principal"
         shadow
       >
-      <hr style="color: #fff;" />
-      <ul class="mx-4">
-        <li class="my-2" style="font-weight: 700; ">
-          <router-link
-            style="color: #fff;"
-            to="/parodias"
-            v-scroll-to="'#parodias'"
-            v-b-toggle.sidebar-2
-          >
-            Paródias
-          </router-link>
-        </li>
-        <li class="my-2" style="font-weight: 700; ">
-          <router-link style="color: #fff;" to="/fotos" v-scroll-to="'#fotos'" v-b-toggle.sidebar-2>
-            Fotos
-          </router-link>
-        </li>
-        <li class="my-2" style="font-weight: 700; ">
-          <router-link style="color: #fff;" to="/parcerias" v-scroll-to="'#parcerias'" v-b-toggle.sidebar-2>
-            Parcerias
-          </router-link>
-        </li>
-        <li class="my-2" style="font-weight: 700; " >
-          <router-link style="color: #fff;" to="/entrevistas" v-scroll-to="'#entrevistas'" v-b-toggle.sidebar-2>
-            Entrevistas
-          </router-link>
-        </li>
-        <li class="my-2" style="font-weight: 700; ">
-          <router-link style="color: #fff;" to="/contato" v-scroll-to="'#contato'" v-b-toggle.sidebar-2>
-            Contato
-          </router-link>
-        </li>
-      </ul>
+        <hr style="color: #fff;" />
+        <ul class="mx-4">
+          <li class="my-2" style="font-weight: 700; ">
+            <router-link
+              style="color: #fff;"
+              to="/parodias"
+              v-scroll-to="'#parodias'"
+              v-b-toggle.sidebar-2
+            >
+              Paródias
+            </router-link>
+          </li>
+          <li class="my-2" style="font-weight: 700; ">
+            <router-link style="color: #fff;" to="/fotos" v-scroll-to="'#fotos'" v-b-toggle.sidebar-2>
+              Fotos
+            </router-link>
+          </li>
+          <li class="my-2" style="font-weight: 700; ">
+            <router-link style="color: #fff;" to="/parcerias" v-scroll-to="'#parcerias'" v-b-toggle.sidebar-2>
+              Parcerias
+            </router-link>
+          </li>
+          <li class="my-2" style="font-weight: 700; " >
+            <router-link style="color: #fff;" to="/entrevistas" v-scroll-to="'#entrevistas'" v-b-toggle.sidebar-2>
+              Entrevistas
+            </router-link>
+          </li>
+          <li class="my-2" style="font-weight: 700; ">
+            <router-link style="color: #fff;" to="/contato" v-scroll-to="'#contato'" v-b-toggle.sidebar-2>
+              Contato
+            </router-link>
+          </li>
+        </ul>
+        <div class="d-flex align-items-end mx-4">
+          <b-button variant="danger" size="sm" v-b-toggle.sidebar-1>Login</b-button>
+        </div>
       </b-sidebar>
     </div>
     <div id="title" class="animate__animated animate__zoomIn animate__slow">
@@ -258,11 +263,14 @@ export default {
 
 @media screen and (max-width: 440px) {
   #header {
+    display: flex;
+
     #navbar {
       display: none;
     }
     #navbar-resp {
       display: block;
+      width: 100%;
     }
   }
 }

@@ -2,217 +2,215 @@
   <b-container id="formulario">
     <b-row class="my-4 text-center">
       <div class="col-sm my-4 animate__animated animate__backInLeft animate__slow">
-        <h1>Alcance por Gênero</h1>
-        <GChart
-          :settings="{ packages: ['corechart', 'table', 'map'] }"
-          type="PieChart"
-          :data="genero"
-          class="gchart"
-        />
+    <h1>Alcance por Gênero</h1>
+    <GChart
+      :settings="{ packages: ['corechart', 'table', 'map'] }"
+      type="PieChart"
+      :data="genero"
+      class="gchart"
+    />
       </div>
       <div class="col-sm my-4 animate__animated animate__backInRight animate__slow">
-        <h1>Alcance por Idade</h1>
-        <GChart
-          :settings="{ packages: ['corechart', 'table', 'map'] }"
-          type="ColumnChart"
-          :data="idade"
-          class="gchart"
-        />
+    <h1>Alcance por Idade</h1>
+    <GChart
+      :settings="{ packages: ['corechart', 'table', 'map'] }"
+      type="ColumnChart"
+      :data="idade"
+      class="gchart"
+    />
       </div>
     </b-row>
     <b-row class="my-4 text-center animate__animated animate__backInLeft animate__slow">
       <div class="col-sm my-4">
-        <h1>Média por Stories</h1>
-        <GChart
-          :settings="{ packages: ['corechart', 'table', 'map'] }"
-          type="LineChart"
-          :data="stories"
-          class="gchart"
-        />
+    <h1>Média por Stories</h1>
+    <GChart
+      :settings="{ packages: ['corechart', 'table', 'map'] }"
+      type="LineChart"
+      :data="stories"
+      class="gchart"
+    />
       </div>
       <div class="col-sm my-4 animate__animated animate__backInRight animate__slow">
-        <h1>Principais Localizações</h1>
-        <GChart
-          :settings="{ packages: ['corechart', 'table', 'map'] }"
-          type="BarChart"
-          :data="cidades"
-          class="gchart"
-        />
+    <h1>Principais Localizações</h1>
+    <GChart
+      :settings="{ packages: ['corechart', 'table', 'map'] }"
+      type="BarChart"
+      :data="cidades"
+      class="gchart"
+    />
       </div>
     </b-row>
     <b-row>
       <b-col>
-        <div>
-          <b-form
-            @submit="onSubmit"
-            v-if="show"
-            class="my-4 text-white"
-          >
-            <h1 class="text-white text-center" style="font-size: 25px;">Entre em contato comigo!</h1>
-            <div class="col-sm text-center central my-4">
-              <a href="https://www.facebook.com/dougweiss20" target="_blank" rel="noopener noreferrer">
-                <font-awesome-icon class="icons" :icon="facebook" size="2x" style="color: #fff; margin: 0 20px;" />
-              </a>
-              <a href="https://www.instagram.com/doug.weiss/" target="_blank" rel="noopener noreferrer">
-                <font-awesome-icon class="icons" :icon="instagram" size="2x" style="color: #fff; margin: 0 20px;" />
-              </a>
-              <h3 class="my-4">ou</h3>
-            </div>
-            <b-form-group
-              label="Coloque seu nome:"
-              label-for="input-name"
-            >
-              <b-form-input
-                id="input-name"
-                v-model="form.nome"
-                type="text"
-                placeholder="Primeiro Nome"
-                required
-              ></b-form-input>
-            </b-form-group>
+    <div>
+      <b-form
+    @submit="onSubmit"
+    v-if="show"
+    class="my-4 text-white"
+      >
+    <h1 class="text-white text-center" style="font-size: 25px;">Entre em contato comigo!</h1>
+    <div class="col-sm text-center central my-4">
+      <a href="https://www.facebook.com/dougweiss20" target="_blank" rel="noopener noreferrer">
+    <font-awesome-icon class="icons" :icon="facebook" size="2x" style="color: #fff; margin: 0 20px;" />
+      </a>
+      <a href="https://www.instagram.com/doug.weiss/" target="_blank" rel="noopener noreferrer">
+    <font-awesome-icon class="icons" :icon="instagram" size="2x" style="color: #fff; margin: 0 20px;" />
+      </a>
+      <h3 class="my-4">ou</h3>
+    </div>
+    <b-form-group
+      label="Coloque seu nome:"
+      label-for="input-name"
+    >
+      <b-form-input
+    id="input-name"
+    v-model="form.nome"
+    type="text"
+    placeholder="Primeiro Nome"
+    required
+      ></b-form-input>
+    </b-form-group>
 
-            <b-form-group
-              label="Coloque seu sobrenome:"
-              label-for="input-lastname"
-            >
-              <b-form-input
-                id="input-lastname"
-                v-model="form.sobrenome"
-                type="text"
-                placeholder="Sobrenome"
-                required
-              ></b-form-input>
-            </b-form-group>
+    <b-form-group
+      label="Coloque seu sobrenome:"
+      label-for="input-lastname"
+    >
+      <b-form-input
+    id="input-lastname"
+    v-model="form.sobrenome"
+    type="text"
+    placeholder="Sobrenome"
+    required
+      ></b-form-input>
+    </b-form-group>
 
-            <b-form-group
-              label="Coloque seu email:"
-              label-for="input-email"
-              description="Coloque um email válido para que possamos entrar em contato."
-            >
-              <b-form-input
-                id="input-email"
-                v-model="form.email"
-                type="email"
-                placeholder="Email"
-                required
-              ></b-form-input>
-            </b-form-group>
+    <b-form-group
+      label="Coloque seu email:"
+      label-for="input-email"
+      description="Coloque um email válido para que possamos entrar em contato."
+    >
+      <b-form-input
+    id="input-email"
+    v-model="form.email"
+    type="email"
+    placeholder="Email"
+    required
+      ></b-form-input>
+    </b-form-group>
 
-            <b-form-group
-              label="Coloque seu celular:"
-              label-for="input-cel"
-              description="Coloque um celular válido para que possamos entrar em contato."
-            >
-              <b-form-input
-                id="input-cel"
-                v-model="form.celular"
-                type="tel"
-                placeholder="(51) 99999-9999"
-                v-mask="'(99) 99999-9999'"
-                required
-              ></b-form-input>
-            </b-form-group>
+    <b-form-group
+      label="Coloque seu celular:"
+      label-for="input-cel"
+      description="Coloque um celular válido para que possamos entrar em contato."
+    >
+      <b-form-input
+    id="input-cel"
+    v-model="form.celular"
+    type="tel"
+    placeholder="(51) 99999-9999"
+    v-mask="'(99) 99999-9999'"
+    required
+      ></b-form-input>
+    </b-form-group>
 
-            <b-form-group
-              label="Coloque sua empresa:"
-              label-for="input-business"
-            >
-              <b-form-input
-                id="input-business"
-                v-model="form.empresa"
-                type="text"
-                placeholder="Nome da Empresa"
-                required
-              ></b-form-input>
-            </b-form-group>
+    <b-form-group
+      label="Coloque sua empresa:"
+      label-for="input-business"
+    >
+      <b-form-input
+    id="input-business"
+    v-model="form.empresa"
+    type="text"
+    placeholder="Nome da Empresa"
+    required
+      ></b-form-input>
+    </b-form-group>
 
-            <b-form-group
-              label="Coloque o motivo para contato:"
-              label-for="input-contact"
-            >
-              <b-form-select
-                id="input-contact"
-                v-model="form.motivo"
-                :options="motivos"
-                required
-              ></b-form-select>
-            </b-form-group>
+    <b-form-group
+      label="Coloque o motivo para contato:"
+      label-for="input-contact"
+    >
+      <b-form-select
+    id="input-contact"
+    v-model="form.motivo"
+    :options="motivos"
+    required
+      ></b-form-select>
+    </b-form-group>
 
-            <b-form-group
-              label="Descreva os motivos de seu contato:"
-              label-for="input-describe"
-              class="my-3"
-            >
-              <b-form-textarea
-                id="input-describe"
-                v-model="form.descricao"
-                placeholder="Coloque os detalhes do seu contato..."
-                rows="3"
-                max-rows="6"
-              ></b-form-textarea>
-            </b-form-group>
+    <b-form-group
+      label="Descreva os motivos de seu contato:"
+      label-for="input-describe"
+      class="my-3"
+    >
+      <b-form-textarea
+    id="input-describe"
+    v-model="form.descricao"
+    placeholder="Coloque os detalhes do seu contato..."
+    rows="3"
+    max-rows="6"
+      ></b-form-textarea>
+    </b-form-group>
 
-            <b-button type="submit" variant="primary">Enviar</b-button>
-            <b-spinner label="Spinning" class="mx-4 mt-2 text-" v-if="loading">Enviando mensagem</b-spinner>
-          </b-form>
-          <div
-            v-else
-            class="my-4"
-          >
-            <b-card
-              overlay
-              img-src="https://picsum.photos/900/250/?image=3"
-              img-alt="Envio com sucesso"
-              text-variant="white"
-              title="Enviado com sucesso!"
-            >
-              <b-card-text>
-                Espere que Doug Weiss entrará logo que visualizar seu contato.
-              </b-card-text>
-            </b-card>
-          </div>
-        </div>
+    <b-button type="submit" variant="primary">Enviar</b-button>
+    <b-spinner label="Spinning" class="mx-4 mt-2 text-" v-if="loading">Enviando mensagem</b-spinner>
+      </b-form>
+      <div
+    v-else
+    class="my-4"
+      >
+    <b-card
+      overlay
+      img-src="https://picsum.photos/900/250/?image=3"
+      img-alt="Envio com sucesso"
+      text-variant="white"
+      title="Enviado com sucesso!"
+    >
+      <b-card-text>
+    Espere que Doug Weiss entrará logo que visualizar seu contato.
+      </b-card-text>
+    </b-card>
+      </div>
+    </div>
       </b-col>
     </b-row>
     <b-row>
       <b-col class="my-4 text-center">
-        <hr />
-        <h1 class="text-white">Faça seu login</h1>
-        <b-button variant="danger" v-b-toggle.sidebar-1>Login</b-button>
-        <b-sidebar
-          bg-variant="dark"
-          text-variant="light"
-          id="sidebar-1"
-          title="Login"
-          shadow
-          no-header
-        >
-          <b-form style="background-color: transparent;" class="col-12 my-4">
-            <a
-              v-b-toggle.sidebar-1
-              class="closeSidebar"
-            >X</a>
-            <h1
-              class="my-4 fontlogin"
-            >Faça seu Login</h1>
+    <hr />
+    <b-sidebar
+      bg-variant="dark"
+      text-variant="light"
+      id="sidebar-1"
+      title="Login"
+      shadow
+      no-header
+    >
+      <b-form style="background-color: transparent;" class="col-12 my-4">
+    <a
+      v-b-toggle.sidebar-1
+      class="closeSidebar"
+    >X</a>
+    <h1
+      class="my-4 fontlogin"
+    >Faça seu Login</h1>
 
-            <b-input-group prepend="@" class="my-4">
-              <b-form-input id="inline-form-input-username" placeholder="Empresa" v-model="form.nomeUsuario"></b-form-input>
-            </b-input-group>
+    <b-input-group prepend="@" class="my-4">
+      <b-form-input id="inline-form-input-username" placeholder="Empresa" v-model="form.nomeUsuario"></b-form-input>
+    </b-input-group>
 
-            <b-form-input
-              id="inline-form-input-name"
-              class="my-4"
-              v-model="form.password"
-              placeholder="Senha"
-              type="password"
-              @keyup.enter="login()"
-            ></b-form-input>
+    <b-form-input
+      id="inline-form-input-name"
+      class="my-4"
+      v-model="form.password"
+      placeholder="Senha"
+      type="password"
+      @keyup.enter="login()"
+    ></b-form-input>
 
-            <b-button variant="primary" @click="login()">Entrar</b-button>
-            <!-- <b-button variant="dark" class="mx-5 my-4" @click="register()">Registrar-se</b-button> -->
-          </b-form>
-        </b-sidebar>
+    <b-button variant="primary" @click="login()">Entrar</b-button>
+    <!-- <b-button variant="dark" class="mx-5 my-4" @click="register()">Registrar-se</b-button> -->
+      </b-form>
+    </b-sidebar>
       </b-col>
     </b-row>
   </b-container>
@@ -220,7 +218,7 @@
 
 <script>
 import AwesomeMask from 'awesome-mask'
-import { formService } from '../../_services/formularios.service'
+import { formService } from '../../services/formularios.service'
 import graphics1 from '../../assets/img/graphics1.jpg'
 import graphics2 from '../../assets/img/graphics2.jpg'
 import graphics3 from '../../assets/img/graphics3.jpg'
@@ -328,6 +326,120 @@ export default {
 </script>
 
 <style scoped>
+.fab{
+  position: fixed;
+  bottom:10px;
+  right:10px;
+  z-index: 9999;
+}
+
+.fab button{
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border-radius: 30px;
+  background-color: #cb60b3;
+  border: none;
+  box-shadow: 0 1px 5px rgba(0,0,0,.4);
+  font-size: 24px;
+  color: white;
+
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.fab button:focus{
+  outline: none;
+}
+
+.fab button.main{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #5b19b7;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+}
+
+.fab button.main:before{
+  content: '⏚';
+}
+
+.fab ul{
+  position:absolute;
+  bottom: 0;
+  right: 0;
+  padding:0;
+  padding-right:5px;
+  margin:0;
+  list-style:none;
+  z-index:10;
+
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.fab ul li{
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  margin-bottom: -10%;
+  opacity: 0;
+  -webkit-transition: .3s ease-out;
+  -moz-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.fab ul li label{
+  margin-right:10px;
+  white-space: nowrap;
+  display: block;
+  margin-top: 10px;
+  padding: 5px 8px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,.2);
+  border-radius:3px;
+  height: 18px;
+  font-size: 16px;
+  pointer-events: none;
+  opacity:0;
+
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.fab button.main:active,
+.fab button.main:focus{
+  outline: none;
+  background-color: #7716ff;
+  box-shadow: 0 3px 8px rgba(0,0,0,.5);
+ }
+
+.fab button.main:active:before,
+.fab button.main:focus:before{
+  content: '↑';
+}
+
+.fab button.main:active + ul,
+.fab button.main:focus + ul{
+  bottom: 70px;
+}
+
+.fab button.main:active + ul li,
+.fab button.main:focus + ul li{
+  margin-bottom: 10px;
+  opacity: 1;
+}
+
+.fab button.main:active + ul li:hover label,
+.fab button.main:focus + ul li:hover label{
+  opacity: 1;
+}
 form {
   background-color: #383838;
   border-radius: 5px;

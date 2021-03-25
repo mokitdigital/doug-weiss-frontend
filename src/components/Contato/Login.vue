@@ -23,7 +23,7 @@
 </template>
 
 <script>
-// import { cadastroService } from '../../_services/cadastros.service'
+// import { cadastroService } from '../../services/cadastros.service'
 import dayjs from 'dayjs'
 
 export default {

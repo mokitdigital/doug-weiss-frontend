@@ -105,7 +105,7 @@
 </template>
 
 <script>
-import { formService } from '../../_services/formularios.service'
+import { formService } from '../../services/formularios.service'
 export default {
   computed: {
     rows () {
@@ -114,7 +114,7 @@ export default {
   },
   data () {
     return {
-      perPage: 3,
+      perPage: 10,
       currentPage: 1,
       sortBy: 'DataHora',
       sortDesc: true,
@@ -125,10 +125,6 @@ export default {
         },
         {
           key: 'Empresa',
-          sortable: true
-        },
-        {
-          key: 'Nome_Completo',
           sortable: true
         },
         {
@@ -193,7 +189,6 @@ export default {
           console.log(element)
           const newItem = {
             Empresa: `${element.empresa}`,
-            Nome_Completo: `${element.nome} ${element.sobrenome}`,
             Motivo: `${element.motivo}`,
             DataHora: `${element.dataHora}`
           }

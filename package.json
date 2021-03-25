@@ -27,11 +27,13 @@
     "vue-flux": "^6.4.0",
     "vue-gallery": "^2.0.1",
     "vue-google-charts": "^0.3.3",
+    "vue-perfect-scrollbar": "^0.2.1",
     "vue-router": "^3.2.0",
     "vue-scrollto": "^2.20.0",
     "vue-slick": "^1.1.16",
     "vue-slick-carousel": "^1.0.6",
-    "vue-sweetalert2": "^4.2.0"
+    "vue-sweetalert2": "^4.2.0",
+    "vue2-perfect-scrollbar": "^1.5.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

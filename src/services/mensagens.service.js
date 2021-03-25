@@ -24,10 +24,10 @@ function sendMensagemEmpresa (nome, form) {
   return axios.post(`${url}/mensagens/envios/${nome}`, form, requestConfig)
 }
 
-function deleteMensagemEmpresa(nome) {
+function deleteMensagemEmpresa (nome) {
   const requestConfig = {
     method: 'GET'
   }
 
-  return axios.post(`${url}/mensagens/empresas/${nome}`, requestConfig
+  return axios.post(`${url}/mensagens/empresas/${nome}`, requestConfig)
 }
