@@ -188,7 +188,6 @@ export default {
         const length = this.newDataTable.length
 
         for (let i = 0; i < length; i++) {
-          console.log('Dado: ' + this.newDataTable[i].Empresa)
           if (this.newDataTable[i].Empresa.toLowerCase().indexOf(this.search.toLowerCase()) !== -1) {
             this.dataTable.push(this.newDataTable[i])
           }
