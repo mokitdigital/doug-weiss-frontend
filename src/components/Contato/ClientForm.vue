@@ -210,7 +210,7 @@
       @keyup.enter="login()"
     ></b-form-input>
 
-    <b-button variant="primary" @click="login()">Entrar</b-button>
+    <b-button variant="primary" @click="login()" v-scroll-to="'#tabela'">Entrar</b-button>
     <!-- <b-button variant="dark" class="mx-5 my-4" @click="register()">Registrar-se</b-button> -->
       </b-form>
     </b-sidebar>
