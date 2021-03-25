@@ -1,39 +1,49 @@
 <template>
   <b-container id="tabela">
+    <hr style="border-color: #fff;">
     <b-row>
-      <div class="col-sm-4">
+      <div class="col-sm-8">
+        <h1 class="mt-4 mx-2 text-white">Tabela de Clientes</h1>
+      </div>
+      <div class="col-sm-4 d-flex justify-content-end">
+        <b-button
+          variant="success"
+          @click="exit()"
+          class="my-4 mx-2"
+          pill
+        >
+          <span>Sair da conta</span>
+        </b-button>
+      </div>
+    </b-row>
+    <b-row>
+      <div class="col-sm-4 mt-5">
         <b-form-input
           type="text"
-          class="my-4 rounded"
+          class="my-4"
           @keyup.enter="searchCliente()"
           placeholder="Pesquisar Empresa"
           v-model="search"
+          style="border-radius: 1rem;"
         >
         </b-form-input>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-4 mt-5">
         <b-button
           variant="dark"
           @click="searchCliente()"
-          class="my-4 rounded"
+          class="my-4"
+          pill
         >
           Procurar
         </b-button>
         <b-button
           variant="danger"
           @click="clearSearchCliente()"
-          class="my-4 mx-2 rounded"
-        >
-          Limpar
-        </b-button>
-      </div>
-      <div class="col-sm-4 float-sm-left">
-        <b-button
-          variant="success"
-          @click="exit()"
           class="my-4 mx-2"
+          pill
         >
-          Sair
+          Limpar Tabela
         </b-button>
       </div>
     </b-row>
@@ -136,7 +146,8 @@ export default {
       newDataTable: [],
       cliente: {},
       search: '',
-      show: false
+      show: false,
+      countClear: 0
     }
   },
   methods: {
@@ -175,8 +186,10 @@ export default {
       }
     },
     clearSearchCliente () {
-      this.dataTable = []
-      this.getClientesDataTable()
+      if (this.countClear === 0) {
+        this.dataTable = []
+        this.getClientesDataTable()
+      }
     },
     closeModal () {
       this.cliente = {}
