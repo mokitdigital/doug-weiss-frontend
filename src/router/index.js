@@ -5,7 +5,7 @@ import Parodias from '../components/Parodias/Index.vue'
 import Fotos from '../components/Fotos/Index.vue'
 import Contato from '../components/Contato/Index.vue'
 import ClientForm from '../components/Contato/ClientForm.vue'
-/* import Formulario from '../components/Contato/Formulario.vue'
+/*
 import Chat from '../components/Contato/NewChat.vue'
 import ChatAdm from '../components/Contato/ChatAdm.vue'
 import Login from '../components/Contato/Login.vue' */

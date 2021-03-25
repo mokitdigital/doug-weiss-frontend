@@ -56,7 +56,7 @@
             </router-link>
           </li>
           <li class="my-2" style="font-weight: 700; ">
-            <router-link style="color: #fff;" to="/contato" v-scroll-to="'#contato'" v-b-toggle.sidebar-2>
+            <router-link style="color: #fff;" to="/contato/formulario" v-scroll-to="'#formulario'" v-b-toggle.sidebar-2>
               Contato
             </router-link>
           </li>
