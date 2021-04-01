@@ -211,6 +211,7 @@ export default {
         this.dataTable = []
         this.getClientesDataTable()
       }
+      this.search = ''
     },
     closeModal () {
       this.$bvModal.hide('form-client')
