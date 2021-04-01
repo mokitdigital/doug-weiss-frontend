@@ -21,7 +21,7 @@
         <b-form-input
           type="text"
           class="my-4"
-          @keyup="searchCliente()"
+          @keydown="searchCliente()"
           placeholder="Pesquisar Empresa"
           v-model="search"
           style="border-radius: 1rem;"
@@ -124,6 +124,7 @@
 
 <script>
 import { formService } from '../../services/formularios.service'
+import { tableService } from '../../services/table.service'
 export default {
   computed: {
     rows () {
@@ -181,20 +182,29 @@ export default {
       this.show = false
     },
     searchCliente () {
-      if (this.search !== '') {
-        this.newDataTable = []
-        this.newDataTable = this.dataTable
-        this.dataTable = []
-        const length = this.newDataTable.length
+      /* his.newDataTable = []
+      this.newDataTable = this.dataTable
+      this.dataTable = []
+      const length = this.newDataTable.length
 
-        for (let i = 0; i < length; i++) {
-          if (this.newDataTable[i].Empresa.toLowerCase().indexOf(this.search.toLowerCase()) !== -1) {
-            this.dataTable.push(this.newDataTable[i])
-          }
+      for (let i = 0; i < length; i++) {
+        if (this.newDataTable[i].Empresa.toLowerCase().indexOf(this.search.toLowerCase()) !== -1) {
+          this.dataTable.push(this.newDataTable[i])
         }
-      } else {
-        this.$router.go()
-      }
+      } */
+      tableService.searchBusiness(this.search.toLowerCase()).then(response => {
+        this.dataTable = []
+        for (let index = 0; index < response.data.empresas.length; index++) {
+          const element = response.data.empresas[index]
+          const newItem = {
+            Empresa: `${element.empresa}`,
+            Motivo: `${element.motivo}`,
+            DataHora: `${element.dataHora}`
+          }
+
+          this.dataTable.push(newItem)
+        }
+      })
     },
     clearSearchCliente () {
       if (this.countClear === 0) {
