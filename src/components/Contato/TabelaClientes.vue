@@ -1,10 +1,10 @@
 <template>
   <b-container id="tabela" class="bg-dark my-5 rounded">
     <b-row>
-      <div class="col-sm-8">
-        <h1 class="mt-4 mx-2 text-white">Tabela de Clientes</h1>
-      </div>
-      <div class="col-sm-4 d-flex justify-content-end">
+      <b-col cols="6" sm="8">
+        <h1 class="mt-4 mx-2 text-white">Meus Clientes</h1>
+      </b-col>
+      <b-col cols="6" sm="4" class="d-flex justify-content-end my-5 my-md-0">
         <b-button
           @click="exit()"
           class="my-4 mx-2 blue-gray-100"
@@ -13,10 +13,11 @@
         >
           <span>Sair da conta</span>
         </b-button>
-      </div>
+      </b-col>
     </b-row>
+    <hr class="text-white">
     <b-row>
-      <b-col sm="4" class="mt-5">
+      <b-col cols="8" sm="4" class="mt-5">
         <b-form-input
           type="text"
           class="my-4"
@@ -27,14 +28,14 @@
         >
         </b-form-input>
       </b-col>
-      <b-col sm="4" class="mt-5">
+      <b-col cols="4" sm="4" class="mt-5">
         <b-button
           @click="clearSearchCliente()"
           class="my-4 mx-2 blue-gray-900"
           pill
           size="md"
         >
-          Limpar Tabela
+          Limpar
         </b-button>
       </b-col>
     </b-row>
