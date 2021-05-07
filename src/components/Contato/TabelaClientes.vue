@@ -66,6 +66,14 @@
           </template>
         </b-table>
 
+        <b-modal id="spinner-loading" size="sm" hide-footer hide-header centered>
+          <b-row>
+            <b-col cols="12" sm="12" md="12" lg="12" class="d-flex justify-content-center align-items-center">
+              <b-spinner label="Spinning" class="mx-4 mt-2" v-if="loading">Enviando mensagem</b-spinner>
+            </b-col>
+          </b-row>
+        </b-modal>
+
         <b-pagination
           v-model="currentPage"
           :total-rows="rows"
@@ -78,40 +86,52 @@
         <p class="mt-3 text-white">Pagina {{ currentPage }}</p>
       </b-col>
     </b-row>
-    <b-modal hide-footer id="form-client" hide-header>
-      <p class="my-4 p-4 border-bottom">
-        <strong>Nome Completo:</strong> {{ cliente.Nome_Completo }}
-      </p>
-      <p class="my-4 p-4 border-bottom">
-        <strong>Empresa:</strong> {{ cliente.Empresa }}
-      </p>
-      <p class="my-4 p-4 border-bottom">
-        <strong>Celular:</strong> <a :href="'tel:+55' + cliente.Celular">{{ cliente.Celular}}</a>
-      </p>
-      <p class="my-4 p-4 border-bottom">
-        <strong>Email:</strong> <a :href="'mailto:'+ cliente.Email">{{ cliente.Email }}</a>
-      </p>
-      <p class="my-4 p-4 border-bottom">
-        <strong>Motivo do Contato:</strong> {{ cliente.Motivo }}
-      </p>
-      <p class="my-4 p-4 border-bottom">
-        <strong>Descricao do Motivo:</strong> {{ cliente.Descricao }}
-      </p>
-      <p class="my-4 p-4">
-        <strong>Data e Hora do Contato:</strong> {{ cliente.DataHora }}
-      </p>
+    <b-modal hide-footer id="form-client" :title="cliente.Nome_Completo + ' | ' + cliente.Empresa">
+      <b-list-group>
+        <b-list-group-item button>
+          <p>
+            <strong>Celular:</strong> <a :href="'tel:+55' + cliente.Celular">{{ cliente.Celular}}</a>
+          </p>
+        </b-list-group-item>
+        <b-list-group-item button>
+          <p >
+            <strong>Email:</strong> <a :href="'mailto:'+ cliente.Email">{{ cliente.Email }}</a>
+          </p>
+        </b-list-group-item>
+        <b-list-group-item button>
+          <p >
+            <strong>Motivo do Contato:</strong> {{ cliente.Motivo }}
+          </p>
+        </b-list-group-item>
+        <b-list-group-item button>
+          <p >
+            <strong>Descrição do Motivo:</strong> {{ cliente.Descricao }}
+          </p>
+        </b-list-group-item>
+        <b-list-group-item button>
+          <p>
+            <strong>Data e Hora do Contato:</strong> {{ cliente.DataHora }}
+          </p>
+        </b-list-group-item>
+      </b-list-group>
 
-      <b-button
-        class="mt-3"
-        block
-        @click="closeModal()"
-      >Fechar</b-button>
-      <b-button
-        class="mt-3"
-        block
-        variant="danger"
-        @click="deleteCliente()"
-      >Excluir</b-button>
+      <b-row>
+        <b-col>
+          <b-button
+            class="mt-3 blue-gray-900"
+            block
+            @click="closeModal()"
+          >Fechar</b-button>
+        </b-col>
+        <b-col>
+          <b-button
+            class="mt-3"
+            block
+            variant="danger"
+            @click="deleteCliente()"
+          >Excluir</b-button>
+        </b-col>
+      </b-row>
     </b-modal>
   </b-container>
 </template>
@@ -151,7 +171,8 @@ export default {
       cliente: {},
       search: '',
       show: false,
-      countClear: 0
+      countClear: 0,
+      loading: false
     }
   },
   methods: {
@@ -160,6 +181,7 @@ export default {
       this.$router.push('/contato/formulario')
     },
     deleteCliente () {
+      this.$bvModal.hide('spinner-loading')
       this.$swal({
         html:
           'Voce tem certeza que quer <em> Excluir </em> ?',
@@ -209,6 +231,7 @@ export default {
       this.search = ''
     },
     closeModal () {
+      this.$bvModal.hide('spinner-loading')
       this.$bvModal.hide('form-client')
     },
     getClientesDataTable () {
@@ -226,6 +249,8 @@ export default {
       })
     },
     getClienteUnique (empresa) {
+      this.$bvModal.show('spinner-loading')
+      this.loading = true
       formService.findMensagens().then(response => {
         for (let index = 0; index < response.data.formularios.length; index++) {
           const element = response.data.formularios[index]
@@ -242,6 +267,8 @@ export default {
             }
             this.cliente = newItem
             this.$bvModal.show('form-client')
+            this.loading = false
+            this.$bvModal.hide('spinner-loading')
           }
         }
       })

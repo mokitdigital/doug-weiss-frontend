@@ -210,8 +210,9 @@
       @keyup.enter="login()"
     ></b-form-input>
 
-    <b-button variant="primary" @click="login()" v-scroll-to="'#tabela'">Entrar</b-button>
+    <b-button variant="primary" @click="login()" v-scroll-to="'#tabela'">Entrar</b-button> <br />
     <!-- <b-button variant="dark" class="mx-5 my-4" @click="register()">Registrar-se</b-button> -->
+    <b-spinner label="Spinning" class="mx-4 mt-2" v-if="loadingLogin">Enviando mensagem</b-spinner>
       </b-form>
     </b-sidebar>
       </b-col>
@@ -286,7 +287,8 @@ export default {
         graphics2,
         graphics3
       ],
-      index: null
+      index: null,
+      loadingLogin: false
     }
   },
   components: {
@@ -317,6 +319,7 @@ export default {
       alert(dayjs('2018 Enero 15', 'YYYY MMMM DD', 'pt-br'))
     },
     login () {
+      this.loadingLogin = true
       authService.login(this.form).then(response => {
         const KEY = dayjs().format('DDMMYYYYHHmm')
         localStorage.setItem('dougweiss', KEY)
