@@ -1,23 +1,22 @@
 <template>
-  <b-container id="tabela">
-    <hr style="border-color: #fff;">
+  <b-container id="tabela" class="bg-dark my-5 rounded">
     <b-row>
       <div class="col-sm-8">
         <h1 class="mt-4 mx-2 text-white">Tabela de Clientes</h1>
       </div>
       <div class="col-sm-4 d-flex justify-content-end">
         <b-button
-          variant="success"
           @click="exit()"
-          class="my-4 mx-2"
+          class="my-4 mx-2 blue-gray-100"
           pill
+          size="sm"
         >
           <span>Sair da conta</span>
         </b-button>
       </div>
     </b-row>
     <b-row>
-      <div class="col-sm-4 mt-5">
+      <b-col sm="4" class="mt-5">
         <b-form-input
           type="text"
           class="my-4"
@@ -27,25 +26,17 @@
           style="border-radius: 1rem;"
         >
         </b-form-input>
-      </div>
-      <div class="col-sm-4 mt-5">
+      </b-col>
+      <b-col sm="4" class="mt-5">
         <b-button
-          variant="dark"
-          @click="searchCliente()"
-          class="my-4"
-          pill
-        >
-          Procurar
-        </b-button>
-        <b-button
-          variant="danger"
           @click="clearSearchCliente()"
-          class="my-4 mx-2"
+          class="my-4 mx-2 blue-gray-900"
           pill
+          size="md"
         >
           Limpar Tabela
         </b-button>
-      </div>
+      </b-col>
     </b-row>
     <b-row>
       <b-col>
@@ -60,6 +51,8 @@
           :per-page="perPage"
           :current-page="currentPage"
           :busy="show"
+          style="cursor: pointer;"
+          title="Clique em EMPRESA para + informações"
         >
           <template v-slot:table-busy>
             <div class="text-center text-info my-2">
@@ -140,6 +133,7 @@ export default {
       fields: [
         {
           key: 'DataHora',
+          label: 'Data & Hora',
           sortable: true
         },
         {
@@ -259,6 +253,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.blue-gray-900 {
+  background-color: #102A43;
+}
+.blue-gray {
+  background-color: #627D9B;
+}
+
+.blue-gray-100 {
+  background-color: #486581;
+}
+
 .customPagination > li > a {
   color: red;
 }

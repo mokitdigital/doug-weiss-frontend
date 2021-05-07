@@ -14,6 +14,13 @@ import 'sweetalert2/dist/sweetalert2.min.css'
 /* Axios */
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faSearch, faUserSecret } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faUserSecret, faSearch)
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.use(VueAxios, axios)
 // axios.defaults.headers.common.Accept = 'application/json'
