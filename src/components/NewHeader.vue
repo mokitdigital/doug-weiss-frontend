@@ -29,39 +29,43 @@
         shadow
       >
         <hr style="color: #fff;" />
-        <ul class="mx-4">
-          <li class="my-2" style="font-weight: 700; ">
-            <router-link
-              style="color: #fff;"
-              to="/parodias"
-              v-scroll-to="'#parodias'"
-              v-b-toggle.sidebar-2
-            >
-              Paródias
-            </router-link>
-          </li>
-          <li class="my-2" style="font-weight: 700; ">
-            <router-link style="color: #fff;" to="/fotos" v-scroll-to="'#fotos'" v-b-toggle.sidebar-2>
-              Fotos
-            </router-link>
-          </li>
-          <li class="my-2" style="font-weight: 700; ">
-            <router-link style="color: #fff;" to="/parcerias" v-scroll-to="'#parcerias'" v-b-toggle.sidebar-2>
-              Parcerias
-            </router-link>
-          </li>
-          <li class="my-2" style="font-weight: 700; " >
-            <router-link style="color: #fff;" to="/entrevistas" v-scroll-to="'#entrevistas'" v-b-toggle.sidebar-2>
-              Entrevistas
-            </router-link>
-          </li>
-          <li class="my-2" style="font-weight: 700; ">
-            <router-link style="color: #fff;" to="/contato/formulario" v-scroll-to="'#formulario'" v-b-toggle.sidebar-2>
-              Contato
-            </router-link>
-          </li>
-        </ul>
-        <div class="d-flex align-items-end mx-4">
+        <b-row>
+          <b-col>
+            <ul class="mx-4">
+              <li class="my-2" style="font-weight: 700; ">
+                <router-link
+                  style="color: #fff;"
+                  to="/parodias"
+                  v-scroll-to="'#parodias'"
+                  v-b-toggle.sidebar-2
+                >
+                  Paródias
+                </router-link>
+              </li>
+              <li class="my-2" style="font-weight: 700; ">
+                <router-link style="color: #fff;" to="/fotos" v-scroll-to="'#fotos'" v-b-toggle.sidebar-2>
+                  Fotos
+                </router-link>
+              </li>
+              <li class="my-2" style="font-weight: 700; ">
+                <router-link style="color: #fff;" to="/parcerias" v-scroll-to="'#parcerias'" v-b-toggle.sidebar-2>
+                  Parcerias
+                </router-link>
+              </li>
+              <li class="my-2" style="font-weight: 700; " >
+                <router-link style="color: #fff;" to="/entrevistas" v-scroll-to="'#entrevistas'" v-b-toggle.sidebar-2>
+                  Entrevistas
+                </router-link>
+              </li>
+              <li class="my-2" style="font-weight: 700; ">
+                <router-link style="color: #fff;" to="/contato/formulario" v-scroll-to="'#formulario'" v-b-toggle.sidebar-2>
+                  Contato
+                </router-link>
+              </li>
+            </ul>
+          </b-col>
+        </b-row>
+        <div class="d-flex align-items-end mx-4" style="heigth: 100vh">
           <b-button variant="danger" size="sm" v-b-toggle.sidebar-1>Login</b-button>
         </div>
       </b-sidebar>
