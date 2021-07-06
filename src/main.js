@@ -15,10 +15,14 @@ import 'sweetalert2/dist/sweetalert2.min.css'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faSearch, faUserSecret } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faTimes, faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faUserSecret, faSearch)
+// Import Bootstrap an BootstrapVue CSS files (order is important)
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+library.add(faUserSecret, faSearch, faTimes)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -26,7 +30,6 @@ Vue.use(VueAxios, axios)
 // axios.defaults.headers.common.Accept = 'application/json'
 
 Vue.config.productionTip = false
-
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
 Vue.use(VueScrollTo)

@@ -3,10 +3,8 @@
     <b-row>
       <b-col class="text-center">
         <b-nav class="mt-5" align="center">
-          <b-nav-item>
-            <router-link to="/parodias" v-scroll-to="'#parodias'">
-              Paródias
-            </router-link>
+          <b-nav-item @click="routerAndScrollTo('#parodias', '/parodias')">
+            Paródias
           </b-nav-item>
           <b-nav-item>
             <router-link to="/fotos" v-scroll-to="'#fotos'">
@@ -36,7 +34,10 @@
 
 <script>
 export default {
-
+  methods: {
+    routerAndScrollTo (element, to) {
+    }
+  }
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div id="fotos">
+  <div id="parcerias">
     <gallery :images="images" :index="index" @close="index = null"></gallery>
     <div
       class="box-image animate__animated animate__backInLeft animate__slow"
@@ -18,23 +18,31 @@
 
 <script>
 import VueGallery from 'vue-gallery'
-import doug2 from '../../assets/img/doug2.jpg'
-import doug3 from '../../assets/img/doug3.jpg'
-import doug4 from '../../assets/img/doug4.jpg'
-import doug5 from '../../assets/img/doug5.jpg'
-import doug6 from '../../assets/img/doug6.jpg'
-import doug7 from '../../assets/img/doug7.jpg'
+import Ana from '../../assets/img/parcerias/anaeana.jpg'
+import Daniele from '../../assets/img/parcerias/danielesalvador.jpg'
+import Kau from '../../assets/img/parcerias/kaucaffe.jpg'
+import Mundo from '../../assets/img/parcerias/mundoencantado.jpg'
+import Parc1 from '../../assets/img/parcerias/parc1.jpg'
+import SindiLojas from '../../assets/img/parcerias/sindilojas.jpg'
+import Vale from '../../assets/img/parcerias/superlojadovale.jpg'
+import Supreme from '../../assets/img/parcerias/supreme.jpg'
+import Vacariense from '../../assets/img/parcerias/vacariense.jpg'
+import Yazigi from '../../assets/img/parcerias/yazigi.png'
 
 export default {
   data: function () {
     return {
       images: [
-        doug4,
-        doug2,
-        doug3,
-        doug5,
-        doug6,
-        doug7
+        Ana,
+        Daniele,
+        Kau,
+        Mundo,
+        Parc1,
+        SindiLojas,
+        Vale,
+        Supreme,
+        Vacariense,
+        Yazigi
       ],
       index: null
     }
@@ -46,15 +54,17 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 *{
   overflow-x: hidden;
 }
-#fotos {
+
+#parcerias {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .box-image {
   margin: 15px;
   display: flex;
@@ -66,8 +76,8 @@ export default {
 .image {
   border: 1px solid #ebebeb;
   padding: 5px;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   margin-top: 20px;
   line-height: 150px;
   color: white;
@@ -75,5 +85,4 @@ export default {
   font-size: 3em;
   text-align: center;
 }
-
 </style>

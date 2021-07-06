@@ -1,33 +1,36 @@
 <template>
   <div id="app">
-    <Header></Header>
-    <About></About>
+    <topbar />
+    <sidebar />
     <router-view/>
-    <Footer></Footer>
+    <footer-comp />
+    <Login></Login>
   </div>
 </template>
 <script>
-import Header from '@/components/NewHeader.vue'
-import About from '@/components/About.vue'
-import Footer from '@/components/Footer.vue'
+import Login from './components/Modals/Login'
+import Sidebar from './components/Commom/Sidebar.vue'
+import Topbar from './components/Commom/Topbar.vue'
+import Footer from './views/Footer.vue'
 
 export default {
   components: {
-    Header,
-    About,
-    Footer
+    Login,
+    'footer-comp': Footer,
+    Topbar,
+    Sidebar
   },
   mounted () {
     if (localStorage.getItem('dougweiss')) {
       this.$router.push('/contato/clientes')
-    } else if (this.$route.path !== '/parodias') {
-      this.$router.push('/parodias')
+    } else if (this.$route.path !== '/') {
+      this.$router.push('/')
     }
   }
 }
 </script>
 <style lang="scss">
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -36,5 +39,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #212529;
 }
 </style>

@@ -1,26 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Model from '../views/Model.vue'
-import Parodias from '../components/Parodias/Index.vue'
-import Fotos from '../components/Fotos/Index.vue'
-import Contato from '../components/Contato/Index.vue'
-import ClientForm from '../components/Contato/ClientForm.vue'
-/*
-import Chat from '../components/Contato/NewChat.vue'
-import ChatAdm from '../components/Contato/ChatAdm.vue'
-import Login from '../components/Contato/Login.vue' */
-import Login from '../components/Contato/Login.vue'
-import Clientes from '../components/Contato/TabelaClientes.vue'
-import Parcerias from '../components/Parcerias/Index.vue'
-import Entrevistas from '../components/Entrevistas/Index.vue'
+import Parodias from '../views/Parodias/Index.vue'
+import Fotos from '../views/Fotos/Index.vue'
+import Contato from '../views/Contato/Index.vue'
+import ClientForm from '../views/Contato/ClientForm.vue'
+import Login from '../views/Contato/Login.vue'
+import Clientes from '../views/Contato/TabelaClientes.vue'
+import Parcerias from '../views/Parcerias/Index.vue'
+import Entrevistas from '../views/Entrevistas/Index.vue'
+import Index from '../views/Header.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Model',
-    component: Model
+    name: 'Index',
+    component: Index
   },
   {
     path: '/parodias',
@@ -78,7 +74,17 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else if (to.hash) {
+      return {
+        selector: to.hash
+        // , offset: { x: 0, y: 10 }
+      }
+    }
+  }
 })
 
 export default router

@@ -1,23 +1,13 @@
 <template>
   <b-container id="tabela" class="bg-dark my-5 rounded">
     <b-row>
-      <b-col cols="6" sm="8">
-        <h1 class="mt-4 mx-2 text-white">Meus Clientes</h1>
-      </b-col>
-      <b-col cols="6" sm="4" class="d-flex justify-content-end my-5 my-md-0">
-        <b-button
-          @click="exit()"
-          class="my-4 mx-2 blue-gray-100"
-          pill
-          size="sm"
-        >
-          <span>Sair da conta</span>
-        </b-button>
+      <b-col cols="12" sm="12">
+        <h1 class="mt-5 text-white">Meus Clientes</h1>
       </b-col>
     </b-row>
     <hr class="text-white">
     <b-row>
-      <b-col cols="8" sm="4" class="mt-5">
+      <b-col cols="6" sm="6" class="mt-5">
         <b-form-input
           type="text"
           class="my-4"
@@ -28,14 +18,24 @@
         >
         </b-form-input>
       </b-col>
-      <b-col cols="4" sm="4" class="mt-5">
+      <b-col cols="3" sm="3" class="mt-5">
         <b-button
           @click="clearSearchCliente()"
-          class="my-4 mx-2 blue-gray-900"
+          class="my-4 blue-gray-900"
           pill
           size="md"
         >
           Limpar
+        </b-button>
+      </b-col>
+      <b-col cols="3" sm="3" class="mt-5 d-flex justify-content-end">
+        <b-button
+          @click="exit()"
+          class="my-4 blue-gray-100"
+          pill
+          size="md"
+        >
+          Sair
         </b-button>
       </b-col>
     </b-row>
@@ -180,7 +180,7 @@ export default {
   methods: {
     exit () {
       localStorage.clear()
-      this.$router.push('/contato/formulario')
+      this.$router.push('/')
     },
     deleteCliente () {
       this.$bvModal.hide('spinner-loading')
@@ -303,6 +303,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1 {
+  font-size: 30px;
+}
 .blue-gray-900 {
   background-color: #102A43;
 }
