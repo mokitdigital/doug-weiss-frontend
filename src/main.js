@@ -17,6 +17,7 @@ import VueAxios from 'vue-axios'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faSearch, faTimes, faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import VueInstagram from 'vue-instagram'
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
@@ -34,6 +35,7 @@ Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
 Vue.use(VueScrollTo)
 Vue.use(VueGoogleCharts)
+Vue.use(VueInstagram)
 
 const options = {
   confirmButtonColor: '#000',
