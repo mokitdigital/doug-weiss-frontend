@@ -3,10 +3,10 @@
       <footer>
           <div class="social">
             <a href="https://www.facebook.com/dougweiss20" target="_blank" rel="noopener noreferrer">
-              <font-awesome-icon class="icons" :icon="facebook" size="1s" style="color: #fff; margin: 0 20px;" />
+              <font-awesome-icon class="icons" :icon="facebook" style="color: #fff; margin: 0 20px;" />
             </a>
             <a href="https://www.instagram.com/doug.weiss/" target="_blank" rel="noopener noreferrer">
-              <font-awesome-icon class="icons" :icon="instagram" size="1x" style="color: #fff; margin: 0 20px;" />
+              <font-awesome-icon class="icons" :icon="instagram" style="color: #fff; margin: 0 20px;" />
             </a>
           </div>
           <div class="text-center">
