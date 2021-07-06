@@ -52,6 +52,7 @@
           :per-page="perPage"
           :current-page="currentPage"
           :busy="show"
+          :sort-compare="myCompare"
           style="cursor: pointer;"
           title="Clique em EMPRESA para + informações"
         >
@@ -155,7 +156,8 @@ export default {
         {
           key: 'DataHora',
           label: 'Data & Hora',
-          sortable: true
+          sortable: true,
+          sortByFormatted: true
         },
         {
           key: 'Empresa',
@@ -236,6 +238,7 @@ export default {
     },
     getClientesDataTable () {
       formService.findMensagens().then(response => {
+        console.log(response.data)
         for (let index = 0; index < response.data.formularios.length; index++) {
           const element = response.data.formularios[index]
           const newItem = {
@@ -272,6 +275,25 @@ export default {
           }
         }
       })
+    },
+    myCompare (itemA, itemB, key) {
+      if (key !== 'DataHora') {
+        // If field is not `date` we let b-table handle the sorting
+        return false
+      } else {
+        // Convert the string formatted date to a number that can be compared
+        // Get the values being compared from the items
+        let a = itemA[key]
+        let b = itemB[key]
+        // Split them into an array of parts (dd, mm, and yyyy)
+        a = a.split('/')
+        b = b.split('/')
+        // convert string parts to numbers
+        a = (parseInt(a[2], 10) * 10000) + (parseInt(a[1], 10) * 100) + parseInt(a[0])
+        b = (parseInt(b[2], 10) * 10000) + (parseInt(b[1], 10) * 100) + parseInt(b[0])
+        // Return the comparison result
+        return a - b
+      }
     }
   },
   mounted () {
