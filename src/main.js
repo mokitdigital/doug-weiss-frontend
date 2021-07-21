@@ -22,8 +22,9 @@ import VueInstagram from 'vue-instagram'
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faUserSecret, faSearch, faTimes)
+library.add(faUserSecret, faSearch, faTimes, faWhatsapp)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
