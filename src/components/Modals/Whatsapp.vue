@@ -8,7 +8,7 @@
 export default {
   methods: {
     send () {
-      window.open('https://wa.me/555191216335')
+      /* window.open('https://wa.me/555191216335') */
     }
   }
 }
